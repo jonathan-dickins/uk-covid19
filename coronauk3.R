@@ -84,6 +84,7 @@ newdf$csht <- (newdf$cases/newdf$Estimated.Population.mid.2018)*100000
 # we can drop the group variable
 newdf$group <- NULL
 
+# download the shapefile from here: http://geoportal.statistics.gov.uk/datasets/6638c31a8e9842f98a037748f72258ed_0
 # Load the shapefile - make sure you change the filepath to where you saved the shapefiles
 # shapefile is in the repo
 # PHE reports Covid-19 cases by upper tier local authority- a mix of counties,
