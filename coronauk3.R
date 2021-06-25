@@ -44,15 +44,15 @@ newdf$csht <- (newdf$cases/newdf$Estimated.Population.mid.2018)*100000
   
  #assigning colours manually
   bivariate_color_scale <- tibble(
-    "3 - 3" = "#3F2949", # high inequality, high income
+    "3 - 3" = "#3F2949", 
     "2 - 3" = "#435786",
-    "1 - 3" = "#4885C1", # low inequality, high income
+    "1 - 3" = "#4885C1", 
     "3 - 2" = "#77324C",
-    "2 - 2" = "#806A8A", # medium inequality, medium income
+    "2 - 2" = "#806A8A", 
     "1 - 2" = "#89A1C8",
-    "3 - 1" = "#AE3A4E", # high inequality, low income
+    "3 - 1" = "#AE3A4E", 
     "2 - 1" = "#BC7C8F",
-    "1 - 1" = "#CABED0" # low inequality, low income
+    "1 - 1" = "#CABED0" 
   ) %>%
     gather("group", "fill")
   
@@ -69,7 +69,7 @@ newdf$csht <- (newdf$cases/newdf$Estimated.Population.mid.2018)*100000
         breaks = quantiles_pop,
         include.lowest = TRUE
       ),
-    # by pasting the factors together as numbers we match the?groups defined
+    # by pasting the factors together as numbers we match the groups defined
     # in the tibble bivariate_color_scale
       group = paste(
         as.numeric(cases_quantiles), "-",
@@ -241,9 +241,9 @@ stplt <- ggplot(newdf,
   theme(panel.grid.minor = element_blank()) +
   labs(x = "People per sq km", y = "Cases per 100,000 people", title="UK Population Density and COVID-19 cases (April 2nd 2020)") +
   #geom_mark_circle(aes(filter = id == "Cumbria", label = "Cumbria", description = "is sparsely populated but has a high case rate")) 
-  #geom_mark_circle(aes(filter = id == "Kingston upon Hull, ?i?y of", label = "Kingston upon Hull", description = "a city with a low case rate")) 
+  #geom_mark_circle(aes(filter = id == "Kingston upon Hull, City of", label = "Kingston upon Hull", description = "a city with a low case rate")) 
   #geom_mark_circle(aes(filter = id == "Sheffield", label = "Sheffield", description = "has the highest case rate outside of London")) 
-  #geom_mark_circle(aes(filter = id =? ?Havering", label = "Havering", description = "is the London Borough with the lowest case rate")) 
+  #geom_mark_circle(aes(filter = id == "Havering", label = "Havering", description = "is the London Borough with the lowest case rate")) 
   
   print(stplt)
 
